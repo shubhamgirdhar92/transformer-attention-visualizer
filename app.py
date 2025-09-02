@@ -13,14 +13,48 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+# Hide Streamlit warnings with custom CSS
+hide_warnings_css = """
+<style>
+/* Hide deprecation warnings */
+.stAlert > div[data-baseweb="notification"] {
+    display: none !important;
+}
+
+/* Hide specific warning text */
+div[data-testid="stMarkdownContainer"] p:contains("deprecated") {
+    display: none !important;
+}
+
+/* Hide any yellow warning boxes */
+.stAlert[data-baseweb="notification"][kind="warning"] {
+    display: none !important;
+}
+
+/* Hide matplotlib warnings */
+.stAlert:contains("st.pyplot") {
+    display: none !important;
+}
+
+/* General warning suppression */
+[class*="warning"] {
+    display: none !important;
+}
+</style>
+"""
+st.markdown(hide_warnings_css, unsafe_allow_html=True)
+
 # Title and description
 st.title("🎯 Andaza Apna Apna")
+
+# Add the fun image right below the title
 st.image("andaza-poster.png", 
          caption="When AI goes W.A.I.L.D! 🤖", 
          use_container_width=True)
+
 st.markdown("""
 ### Understanding Transformer "Andaza" (Approximation)
-Andaza is an Urdu word meaning approximation, which is what transformer models do, see how they do their andaza/approximation by visualising attention weights!
+Andaza is an Urdu word that means approximation, which is essentially what transformer models do. See how they perform their approximation by visualizing attention weights.
 
 **How to use:**
 1. Enter an English sentence
@@ -96,26 +130,46 @@ with col1:
                     
                     if visualization_type == "Single Head View":
                         # Generate single head visualization
-                        translation = viz.visualize_core_attention(
-                            source_text, 
-                            layer=layer
-                        )
+                        # Capture ALL output including Streamlit warnings
+                        stderr_buffer = io.StringIO()
+                        with redirect_stderr(stderr_buffer):
+                            with warnings.catch_warnings():
+                                warnings.simplefilter("ignore")
+                                translation = viz.visualize_core_attention(
+                                    source_text, 
+                                    layer=layer
+                                )
                         
-                        # Display the plot in Streamlit
-                        st.pyplot(fig=None, clear_figure=True)
+                        # Display the plot without any warning output
+                        try:
+                            # Force matplotlib to not display warnings in Streamlit
+                            import matplotlib
+                            matplotlib.pyplot.ioff()  # Turn off interactive mode
+                            st.pyplot(clear_figure=True, use_container_width=True)
+                        except:
+                            st.pyplot()
                         
                         # Show results
                         st.success(f"**Translation:** {translation}")
                         
                     else:
                         # Generate multi-head comparison
-                        translation = viz.compare_heads(
-                            source_text,
-                            layer=layer
-                        )
+                        stderr_buffer = io.StringIO()
+                        with redirect_stderr(stderr_buffer):
+                            with warnings.catch_warnings():
+                                warnings.simplefilter("ignore")
+                                translation = viz.compare_heads(
+                                    source_text,
+                                    layer=layer
+                                )
                         
-                        # Display the plot
-                        st.pyplot(fig=None, clear_figure=True)
+                        # Display the plot without warnings
+                        try:
+                            import matplotlib
+                            matplotlib.pyplot.ioff()
+                            st.pyplot(clear_figure=True, use_container_width=True)
+                        except:
+                            st.pyplot()
                         
                         # Show results
                         st.success(f"**Translation:** {translation}")
