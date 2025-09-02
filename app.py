@@ -15,6 +15,9 @@ st.set_page_config(
 
 # Title and description
 st.title("🎯 Andaza Apna Apna")
+st.image("andaza-poster.png", 
+         caption="When AI goes W.A.I.L.D! 🤖", 
+         use_column_width=True)
 st.markdown("""
 ### Understanding Transformer "Andaza" (Approximation)
 Andaza is an urdu word which means approximation which is basically what transformer models do, see how to do their andaza/approximation by visualising attention weights!
