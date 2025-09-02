@@ -1,0 +1,8 @@
+torch
+transformers==4.35.0
+streamlit
+matplotlib
+seaborn
+numpy
+pandas
+Pillow
