@@ -7,18 +7,17 @@ from simple_attention import SimpleAttentionVisualizer
 
 # Configure the page
 st.set_page_config(
-    page_title="🧠 Transformer Attention Visualizer",
-    page_icon="🔍",
+    page_title="🎯 Andaza Apna Apna",
+    page_icon="🎯",
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
 # Title and description
-st.title("🧠 Transformer Attention Visualizer")
+st.title("🎯 Andaza Apna Apna")
 st.markdown("""
-### Understanding "Attention is All You Need"
-See exactly how transformer models translate by visualizing attention weights!
-Each blue square shows which English words the model focuses on when generating German words.
+### Understanding Transformer "Andaza" (Approximation)
+Andaza is an urdu word which means approximation which is basically what transformer models do, see how to do their andaza/approximation by visualising attention weights!
 
 **How to use:**
 1. Enter an English sentence
@@ -138,20 +137,20 @@ with col2:
     st.markdown("""
     ### 🎓 What You're Learning:
     
-    **"Attention is All You Need"** revolutionized AI by showing that:
+    **"Andaza" (Approximation)** is how transformers work:
     
-    ✅ **Direct Connections**: Any output word can directly attend to any input word
+    ✅ **Pattern Recognition**: Models learn patterns from millions of examples
     
-    ✅ **No Recurrence**: No need to process words sequentially like RNNs
+    ✅ **Attention Weights**: Show which words are important for translation
     
-    ✅ **Parallel Processing**: All attention computed simultaneously
+    ✅ **No Perfect Rules**: Just very good approximations based on data
     
-    ✅ **Multi-Head Specialization**: Different heads focus on different aspects
+    ✅ **Context Matters**: Same word can have different "andaza" in different contexts
     
     ### 🔍 What to Look For:
-    - Strong attention (0.7+) = confident translation
-    - Distributed attention = contextual reasoning
-    - Different heads = different strategies
+    - Strong attention (0.7+) = confident approximation
+    - Distributed attention = considering multiple possibilities
+    - Different heads = different approximation strategies
     """)
     
     # Add some examples of what to expect
@@ -165,10 +164,12 @@ with col2:
 # Footer
 st.markdown("---")
 st.markdown("""
-### 🚀 About This Project
-This visualizer demonstrates the attention mechanism from the famous "Attention is All You Need" paper. 
-Built with Streamlit, Transformers, and deployed on Streamlit Cloud.
+### 🚀 About "Andaza Apna Apna"
+This visualizer demonstrates how transformer models make their "andaza" (approximations) when translating. 
+Just like humans make educated guesses based on context, transformers use attention to approximate the best translations!
 
 **Model**: Helsinki-NLP/opus-mt-en-de (English to German translation)
 **Architecture**: Transformer with 6 layers, 8 attention heads each
+
+*Andaza (اندازہ) = Approximation/Estimate in Urdu/Hindi* 🎯
 """)
