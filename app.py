@@ -16,8 +16,7 @@ st.set_page_config(
 # Title and description
 st.title("🎯 Andaza Apna Apna")
 
-# Add the fun image right below the title
-st.image("https://i.imgur.com/your-image-url.png", 
+st.image("andaza-poster.png", 
          caption="When AI goes W.A.I.L.D! 🤖", 
          use_column_width=True)
 
