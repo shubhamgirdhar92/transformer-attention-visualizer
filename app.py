@@ -20,7 +20,7 @@ st.image("andaza-poster.png",
          use_container_width=True)
 st.markdown("""
 ### Understanding Transformer "Andaza" (Approximation)
-Andaza is an urdu word which means approximation which is basically what transformer models do, see how to do their andaza/approximation by visualising attention weights!
+Andaza is an Urdu word meaning approximation, which is what transformer models do, see how they do their andaza/approximation by visualising attention weights!
 
 **How to use:**
 1. Enter an English sentence
