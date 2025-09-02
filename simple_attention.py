@@ -5,7 +5,8 @@ import seaborn as sns          # For beautiful heatmaps
 import numpy as np             # For numerical operations
 from transformers import MarianMTModel, MarianTokenizer  # Hugging Face transformer models
 import warnings
-warnings.filterwarnings("ignore")  # Hide warning messages for cleaner output
+warnings.filterwarnings("ignore")  # Hide all warning messages for cleaner output
+warnings.filterwarnings("ignore", category=DeprecationWarning)  # Specifically suppress deprecation warnings
 
 class SimpleAttentionVisualizer:
     def __init__(self, model_name="Helsinki-NLP/opus-mt-en-de"):
@@ -170,10 +171,12 @@ class SimpleAttentionVisualizer:
         if save_path:
             fig.savefig(save_path, dpi=300, bbox_inches='tight')
         
-        # Store translation for access by Streamlit app
-        self.last_translation = translation
+        # Show the plot (suppress any warnings)
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore")
+            plt.show()
         
-        # STEP 7: Print interpretation guide (for command line use)
+        # STEP 7: Print interpretation guide
         print(f"\\n📊 Translation: {translation}")
         print(f"🔍 How to read this heatmap:")
         print(f"   • Each row = one German word being generated")  
@@ -182,8 +185,7 @@ class SimpleAttentionVisualizer:
         print(f"   • Light blue = low attention (model ignoring)")
         print(f"   • Look for diagonal patterns = direct word alignment")
         
-        # Return the figure object for Streamlit
-        return fig
+        return translation
     
     def compare_heads(self, source_text, layer=2, save_path=None):
         """
@@ -255,18 +257,19 @@ class SimpleAttentionVisualizer:
         if save_path:
             fig.savefig(save_path, dpi=300, bbox_inches='tight')
         
-        # Store translation for access by Streamlit app
-        self.last_translation = translation
+        # Show the plot (suppress any warnings)
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore")
+            plt.show()
         
-        # STEP 5: Print explanation of what to look for (for command line use)
+        # STEP 5: Print explanation of what to look for
         print(f"\\n🔍 What you're seeing:")
         print(f"   • Each subplot = different attention head")
         print(f"   • Notice how heads show different patterns!")
         print(f"   • Some focus on word alignment, others on grammar")
         print(f"   • This proves why 'multi-head' attention works")
         
-        # Return the figure object for Streamlit
-        return fig
+        return translation
 
 # DEMO FUNCTION - Shows how to use the visualizer
 def quick_demo():
