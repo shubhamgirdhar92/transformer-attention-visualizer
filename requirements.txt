@@ -6,3 +6,6 @@ seaborn
 numpy
 pandas
 Pillow
+sentencepiece
+sacremoses
+protobuf
