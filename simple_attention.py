@@ -16,7 +16,7 @@ class SimpleAttentionVisualizer:
         
         # Load model and tokenizer
         self.tokenizer = MarianTokenizer.from_pretrained(model_name)
-        self.model = MarianMTModel.from_pretrained(model_name, attn_implementation="eager")
+        self.model = MarianMTModel.from_pretrained(model_name)
         self.model.to(self.device)
         self.model.eval()
         
