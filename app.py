@@ -18,7 +18,7 @@ st.title("🎯 Andaazaa Apna Apna")
 
 st.image("andaazaa-poster.png", 
          caption="When AI goes W.A.I.L.D! 🤖", 
-         use_container_width=True, width=400)
+         use_container_width=True, width=600)
 
 st.markdown("""
 ### Understanding Transformer "Andaazaa" (Approximation)
