@@ -123,7 +123,6 @@ with col1:
                         
                         # Show results
                         st.success(f"**Translation:** {translation}")
-                        st.balloons()
                         st.markdown('<div id="visualization-result"></div>', unsafe_allow_html=True)
                         st.markdown("""
                         <script>
