@@ -123,6 +123,20 @@ with col1:
                         
                         # Show results
                         st.success(f"**Translation:** {translation}")
+                        st.markdown('<div id="visualization-result"></div>', unsafe_allow_html=True)
+                        st.markdown("""
+                        <script>
+                        setTimeout(function() {
+                            const element = document.getElementById('visualization-result');
+                            if (element) {
+                                element.scrollIntoView({
+                                    behavior: 'smooth',
+                                    block: 'center'
+                                });
+                            }
+                        }, 500);
+                        </script>
+                        """, unsafe_allow_html=True)
                         
                     else:
                         # Generate multi-head comparison
@@ -136,6 +150,20 @@ with col1:
                         
                         # Show results
                         st.success(f"**Translation:** {translation}")
+                        st.markdown('<div id="visualization-result"></div>', unsafe_allow_html=True)
+                        st.markdown("""
+                        <script>
+                        setTimeout(function() {
+                            const element = document.getElementById('visualization-result');
+                            if (element) {
+                                element.scrollIntoView({
+                                    behavior: 'smooth',
+                                    block: 'center'
+                                });
+                            }
+                        }, 500);
+                        </script>
+                        """, unsafe_allow_html=True)
                         
                     # Add interpretation guide
                     if visualization_type == "Multi-Head Comparison":
