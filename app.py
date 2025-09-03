@@ -66,20 +66,11 @@ visualization_type = st.sidebar.radio(
 
 if visualization_type == "Multi-Head Comparison":
     st.sidebar.markdown("""
-    **What Each Head Usually Does:**
-    - **Head 0-1**: Word-to-word translation
-    - **Head 2-3**: Grammar & sentence structure
-    - **Head 4-5**: Context & positional info
-    - **Head 6-7**: Semantic relationships
     
-    Look for different patterns in each subplot!
     """)
 else:
     st.sidebar.markdown("""
-    **Single Head Analysis:**
-    Shows one attention head's strategy.
-    Try different layers to see how 
-    attention evolves through the network.
+   
     """)
 analyze_button = st.sidebar.button("🔍 Analyze Attention", type="primary", use_container_width=True)
 
