@@ -58,6 +58,7 @@ visualization_type = st.sidebar.radio(
     ["Single Head View", "Multi-Head Comparison"],
     help="Single head is clearer, multi-head shows specialization"
 )
+analyze_button = st.sidebar.button("🔍 Analyze Attention", type="primary", use_container_width=True)
 
 # Add examples
 st.sidebar.markdown("### 💡 Try These Examples:")
@@ -70,7 +71,7 @@ example_sentences = [
 ]
 
 for sentence in example_sentences:
-    if st.sidebar.button(f"📝 {sentence[:20]}..."):
+    if st.sidebar.button(f"📝 {sentence[:30]}..."):
         source_text = sentence
         st.rerun()
 
@@ -79,7 +80,7 @@ col1, col2 = st.columns([2, 1])
 
 with col1:
     # Main visualization button
-    if st.button("🔍 Analyze Attention", type="primary", use_container_width=True):
+    if analyze_button:
         if not source_text.strip():
             st.error("Please enter some English text to analyze!")
         elif len(source_text.split()) > 15:
