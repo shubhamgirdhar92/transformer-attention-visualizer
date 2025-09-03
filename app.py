@@ -16,7 +16,7 @@ st.set_page_config(
 # Title and description
 st.title("🎯 Andaazaa Apna Apna")
 
-st.image("andaazaa-poster.png", 
+st.image("Andaazaa-poster.png", 
          caption="When AI goes W.A.I.L.D! 🤖", 
          use_container_width=True, width=600)
 
@@ -143,7 +143,7 @@ with col2:
     st.markdown("""
     ### 🎓 What You're Learning:
     
-    **"andaazaa" (Approximation)** is how transformers work:
+    **"Andaazaa" (Approximation)** is how transformers work:
     
     ✅ **Pattern Recognition**: Models learn patterns from millions of examples
     
@@ -151,7 +151,7 @@ with col2:
     
     ✅ **No Perfect Rules**: Just very good approximations based on data
     
-    ✅ **Context Matters**: Same word can have different "andaazaa" in different contexts
+    ✅ **Context Matters**: Same word can have different "Andaazaa" in different contexts
     
     ### 🔍 What to Look For:
     - Strong attention (0.7+) = confident approximation
@@ -170,12 +170,12 @@ with col2:
 # Footer
 st.markdown("---")
 st.markdown("""
-### 🚀 About "andaazaa Apna Apna"
-This visualizer demonstrates how transformer models make their "andaazaa" (approximations) when translating. 
+### 🚀 About "Andaazaa Apna Apna"
+This visualizer demonstrates how transformer models make their "Andaazaa" (approximations) when translating. 
 Just like humans make educated guesses based on context, transformers use attention to approximate the best translations!
 
 **Model**: Helsinki-NLP/opus-mt-en-de (English to German translation)
 **Architecture**: Transformer with 6 layers, 8 attention heads each
 
-*andaazaa (اندازہ) = Approximation/Estimate in Urdu/Hindi* 🎯
+*Andaazaa (اندازہ) = Approximation/Estimate in Urdu/Hindi* 🎯
 """)
