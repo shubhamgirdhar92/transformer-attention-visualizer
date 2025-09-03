@@ -58,8 +58,8 @@ st.sidebar.markdown(f"""
 - **Layer 0-1**: Basic word alignment & position
 - **Layer 2-3**: Grammar & syntax relationships  
 - **Layer 4-5**: Full context & semantic meaning
-""")
-                   }</style>
+
+                   }</style>""")
 visualization_type = st.sidebar.radio(
     "Choose Visualization:",
     ["Single Head View", "Multi-Head Comparison"],
