@@ -7,14 +7,13 @@ from simple_attention import SimpleAttentionVisualizer
 
 # Configure the page
 st.set_page_config(
-    page_title="🎯 Andaazaa Apna Apna",
-    page_icon="🎯",
+    page_title="🤔 Andaazaa Apna Apna",
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
 # Title and description
-st.title("🎯 Andaazaa Apna Apna")
+st.title("🤔 Andaazaa Apna Apna")
 
 st.image("Andaazaa-poster.png", 
          caption="When AI goes W.A.I.L.D! 🤖", 
