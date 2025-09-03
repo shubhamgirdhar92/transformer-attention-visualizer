@@ -51,15 +51,12 @@ layer = st.sidebar.selectbox(
     index=2,
     help="Middle layers (2-3) often show the clearest patterns"
 )
-st.sidebar.markdown(f"""
-<style>
-        .small-font{font-size:6px 
+st.sidebar.markdown(f""" 
 **Layer {layer} Focus:**
 - **Layer 0-1**: Basic word alignment & position
 - **Layer 2-3**: Grammar & syntax relationships  
 - **Layer 4-5**: Full context & semantic meaning
-
-                   }</style>""")
+""")
 visualization_type = st.sidebar.radio(
     "Choose Visualization:",
     ["Single Head View", "Multi-Head Comparison"],
