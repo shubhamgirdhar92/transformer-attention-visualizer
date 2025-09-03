@@ -52,12 +52,35 @@ layer = st.sidebar.selectbox(
     index=2,
     help="Middle layers (2-3) often show the clearest patterns"
 )
-
+st.sidebar.markdown(f"""
+**Layer {layer} Focus:**
+- **Layer 0-1**: Basic word alignment & position
+- **Layer 2-3**: Grammar & syntax relationships  
+- **Layer 4-5**: Full context & semantic meaning
+""")
 visualization_type = st.sidebar.radio(
     "Choose Visualization:",
     ["Single Head View", "Multi-Head Comparison"],
     help="Single head is clearer, multi-head shows specialization"
 )
+
+if visualization_type == "Multi-Head Comparison":
+    st.sidebar.markdown("""
+    **What Each Head Usually Does:**
+    - **Head 0-1**: Word-to-word translation
+    - **Head 2-3**: Grammar & sentence structure
+    - **Head 4-5**: Context & positional info
+    - **Head 6-7**: Semantic relationships
+    
+    Look for different patterns in each subplot!
+    """)
+else:
+    st.sidebar.markdown("""
+    **Single Head Analysis:**
+    Shows one attention head's strategy.
+    Try different layers to see how 
+    attention evolves through the network.
+    """)
 analyze_button = st.sidebar.button("🔍 Analyze Attention", type="primary", use_container_width=True)
 
 # Add examples
@@ -124,15 +147,38 @@ with col1:
                         st.success(f"**Translation:** {translation}")
                         
                     # Add interpretation guide
-                    st.markdown("""
-                    ### 📖 How to Read the Visualization:
-                    - **Rows (Y-axis):** German words being generated
-                    - **Columns (X-axis):** English words from input
-                    - **Dark blue:** High attention (model focusing here)
-                    - **Light blue:** Low attention (model ignoring)
-                    - **Diagonal patterns:** Direct word-to-word translation
-                    - **Scattered patterns:** Contextual/grammatical relationships
-                    """)
+                    if visualization_type == "Multi-Head Comparison":
+    st.markdown("""
+    ### 📖 How to Read Multi-Head Comparison:
+    **Each subplot shows a different "expert" within the same layer:**
+    
+    **🎯 Head Specialization Patterns:**
+    - **Diagonal patterns**: Direct word alignment heads
+    - **Scattered attention**: Context and grammar heads  
+    - **Strong columns**: Heads focusing on specific word types
+    - **Broad distributions**: Semantic understanding heads
+    
+    **🔍 What to Compare:**
+    - Which heads show clear word-to-word mapping?
+    - Which heads attend to function words (the, is, on)?
+    - Which heads spread attention across multiple words?
+    - How do attention strategies differ between heads?
+    
+    **💡 Key Insight:** This proves why "multi-head" attention works - 
+    different heads learn different translation strategies!
+    """)
+else:
+    st.markdown("""
+    ### 📖 How to Read Single Head View:
+    - **Rows (Y-axis):** German words being generated
+    - **Columns (X-axis):** English words from input
+    - **Dark blue:** High attention (model focusing here)
+    - **Light blue:** Low attention (model ignoring)
+    - **Diagonal patterns:** Direct word-to-word translation
+    - **Scattered patterns:** Contextual/grammatical relationships
+    
+    **💡 Try different layers to see how attention patterns evolve!**
+    """)
                     
             except Exception as e:
                 st.error(f"Error: {str(e)}")
