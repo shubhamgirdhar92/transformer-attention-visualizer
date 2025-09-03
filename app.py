@@ -7,18 +7,18 @@ from simple_attention import SimpleAttentionVisualizer
 
 # Configure the page
 st.set_page_config(
-    page_title="🎯 Andaza Apna Apna",
+    page_title="🎯 Andaazaa Apna Apna",
     page_icon="🎯",
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
 # Title and description
-st.title("🎯 Andaza Apna Apna")
+st.title("🎯 Andaazaa Apna Apna")
 
 st.image("andaza-poster.png", 
          caption="When AI goes W.A.I.L.D! 🤖", 
-         use_container_width=True)
+         use_container_width=True, width=300)
 
 st.markdown("""
 ### Understanding Transformer "Andaza" (Approximation)
