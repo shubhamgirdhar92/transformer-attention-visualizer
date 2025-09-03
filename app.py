@@ -16,13 +16,13 @@ st.set_page_config(
 # Title and description
 st.title("🎯 Andaazaa Apna Apna")
 
-st.image("andaza-poster.png", 
+st.image("andaazaa-poster.png", 
          caption="When AI goes W.A.I.L.D! 🤖", 
-         use_container_width=True, width=300)
+         use_container_width=True, width=400)
 
 st.markdown("""
-### Understanding Transformer "Andaza" (Approximation)
-Andaza is an Urdu word that means approximation, which is essentially what transformer models do. See how they perform their approximation by visualizing attention weights.
+### Understanding Transformer "Andaazaa" (Approximation)
+Andaazaa is an Urdu word that means approximation, which is essentially what transformer models do. See how they perform their approximation by visualizing attention weights.
 
 **How to use:**
 1. Enter an English sentence
@@ -142,7 +142,7 @@ with col2:
     st.markdown("""
     ### 🎓 What You're Learning:
     
-    **"Andaza" (Approximation)** is how transformers work:
+    **"andaazaa" (Approximation)** is how transformers work:
     
     ✅ **Pattern Recognition**: Models learn patterns from millions of examples
     
@@ -150,7 +150,7 @@ with col2:
     
     ✅ **No Perfect Rules**: Just very good approximations based on data
     
-    ✅ **Context Matters**: Same word can have different "andaza" in different contexts
+    ✅ **Context Matters**: Same word can have different "andaazaa" in different contexts
     
     ### 🔍 What to Look For:
     - Strong attention (0.7+) = confident approximation
@@ -169,12 +169,12 @@ with col2:
 # Footer
 st.markdown("---")
 st.markdown("""
-### 🚀 About "Andaza Apna Apna"
-This visualizer demonstrates how transformer models make their "andaza" (approximations) when translating. 
+### 🚀 About "andaazaa Apna Apna"
+This visualizer demonstrates how transformer models make their "andaazaa" (approximations) when translating. 
 Just like humans make educated guesses based on context, transformers use attention to approximate the best translations!
 
 **Model**: Helsinki-NLP/opus-mt-en-de (English to German translation)
 **Architecture**: Transformer with 6 layers, 8 attention heads each
 
-*Andaza (اندازہ) = Approximation/Estimate in Urdu/Hindi* 🎯
+*andaazaa (اندازہ) = Approximation/Estimate in Urdu/Hindi* 🎯
 """)
