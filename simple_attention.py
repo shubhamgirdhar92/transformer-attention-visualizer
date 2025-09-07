@@ -26,7 +26,7 @@ class SimpleAttentionVisualizer:
         self.tokenizer = MarianTokenizer.from_pretrained(model_name)
         
         # Load the translation model with eager attention (needed for visualization)
-        self.model = MarianMTModel.from_pretrained(model_name, attn_implementation="eager")
+        self.model = MarianMTModel.from_pretrained(model_name)
         
         # Move model to GPU/CPU and set to evaluation mode (no training)
         self.model.to(self.device)
